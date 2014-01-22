@@ -8,7 +8,7 @@
     </head>
     <body>
 	
-		<div style="float:left;">
+		<div style="float:right;">
 			<ul>
 				<li>blue</li>
 				<li>red</li>
@@ -19,7 +19,7 @@
 		</div>
 		
 		<div style="float:right;">
-			<ul>
+			<ul id="test2">
 				<li>Lion</li>
 				<li>Elephant</li>
 				<li>Duck</li>
@@ -30,20 +30,21 @@
 			</ul>
 		</div>
 		
-		<div style="float:right;">
-			<ul>
-				<li>Lion</li>
-				<li>Elephant</li>
-				<li>Duck</li>
-				<li>Crocodile</li>
-				<li>Penguin</li>
-				<li>Worm</li>
-				<li>Fish</li>
-			</ul>
+		<div style="float:left;">
+			<div id="test1">
+				<div>six</div>
+				<div>five</div>
+				<div>four</div>
+				<div>three</div>
+				<div>two</div>
+				<div>one</div>
+				
+			</div>
 		</div>
 		
 		<script>
-			$('ul').peeper({anim: 'peeper-example-animation'});
+			$('#test1').peeper({anim: 'peeper-example-animation', peeps: 'div'});
+			$('#test2').peeper();
 		</script>
 
     </body>

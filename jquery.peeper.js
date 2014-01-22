@@ -29,7 +29,8 @@
 			peep.after('<a href="#" class="' + options.viewMoreIdentifier + '">'+options.expandText+'</a>');
 			togglePeeperVisibility(peep.find('.peeper'));	
 			$(peep.next('.' + options.viewMoreIdentifier)).click(function(e){
-				togglePeeperVisibility($(this).prev('ul').find('.peeper'));
+				//togglePeeperVisibility($(this).prev('ul').find('.peeper'));
+				togglePeeperVisibility(peep.find('.peeper'));
 				e.preventDefault();
 			});
 
