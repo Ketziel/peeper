@@ -4,6 +4,8 @@
 		var defaults = {
 			peeps: 'li',
 			peepsToShow: 3,
+			expandText: 'MORE',
+			viewMoreIdentifier: 'peeper-clicker',
 		}
 		var options =  $.extend(defaults, options);
 		
@@ -31,9 +33,21 @@
 			});
 					blah = blah + '</div>';
 					peep.append(blah);
+					peep.after('<a href="#" class="' + options.viewMoreIdentifier + '">'+options.expandText+'</a>');
+									
+					$('.'+options.viewMoreIdentifier).click(function(e){
+						$(this).prev('ul').find('.peeper').slideUp(100);
+						e.preventDefault();
+					});
+								
+					
 			//console.log(peep.html());
 			//console.log(options.child);
 			
 		});
+		
+
+		
+		
 	};
 })( jQuery );
