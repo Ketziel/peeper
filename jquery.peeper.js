@@ -34,9 +34,12 @@
 					blah = blah + '</div>';
 					peep.append(blah);
 					peep.after('<a href="#" class="' + options.viewMoreIdentifier + '">'+options.expandText+'</a>');
-									
-					$('.'+options.viewMoreIdentifier).click(function(e){
-						$(this).prev('ul').find('.peeper').slideUp(100);
+						
+					//alert($(peep).html());
+						
+					$(peep.next('.' + options.viewMoreIdentifier)).click(function(e){
+						var thePeeper = $(this).prev('ul').find('.peeper');
+						thePeeper.slideToggle();
 						e.preventDefault();
 					});
 								
