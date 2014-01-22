@@ -5,11 +5,20 @@
 		<link type="text/css" rel="stylesheet" href="peeper.css"/>
         <script>window.jQuery || document.write('<script src="jquery-1.9.1.min.js"><\/script>')</script>
 		<script src="jquery.peeper.js"></script>
+		<style>
+			.colourbox {height:50px; width:50px; background-color:#dedede;}
+			#one{background-color:#35C0D3;}
+			#two{background-color:#11A16C;}
+			#three{background-color:#10B082;}
+			#four{background-color:#06BA9F;}
+			#five{background-color:#28A8A7;}
+		</style>
+		
     </head>
     <body>
 	
 		<div style="float:right;">
-			<ul>
+			<ul id="test3">
 				<li>blue</li>
 				<li>red</li>
 				<li>yellow</li>
@@ -41,10 +50,17 @@
 				
 			</div>
 		</div>
+		<div style="clear:both;"></div>
+		<div class="colourbox left" id="one"></div>
+		<div class="colourbox left" id="two"></div>
+		<div class="colourbox left" id="three"></div>
+		<div class="colourbox left" id="four"></div>
+		<div class="colourbox left" id="five"></div>
 		
 		<script>
 			$('#test1').peeper({anim: 'peeper-example-animation', peeps: 'div'});
-			$('#test2').peeper();
+			$('#test2').peeper({expandIdentifier:'BLANK'});
+			$('#test3').peeper({peepListIdentifier:'BLANK'});
 		</script>
 
     </body>

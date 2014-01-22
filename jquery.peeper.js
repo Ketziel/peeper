@@ -4,19 +4,21 @@
 		var defaults = {
 			peeps: 'li',
 			peepsToShow: 3,
+			peepListIdentifier: 'peeper',
 			expandText: 'MORE',
-			viewMoreIdentifier: 'peeper-clicker',
+			expandIdentifier: 'peeper-clicker',
+			jqueryAnimSpeed:200,
 			anim: '',
 			animClose: 'closed'
 		}
 		var options =  $.extend(defaults, options);
 		
 		return this.each(function() {
-			var peep = $(this);
-			var listLength =peep.find(options.peeps).length;
-			var contentToBeHidden = '<div class="peeper ' + ((options.anim != '') ? options.anim : '') + '">';
+			var peepList = $(this);
+			var listLength =peepList.find(options.peeps).length;
+			var contentToBeHidden = '<div class="' + options.peepListIdentifier + ((options.anim != '') ? options.anim : '') + '">';
 			
-			peep.find(options.peeps).each(function(index, element){
+			peepList.find(options.peeps).each(function(index, element){
 
 				if(index >= options.peepsToShow){
 					contentToBeHidden = contentToBeHidden + $(this).wrap('<p/>').parent().html();
@@ -25,12 +27,11 @@
 				}
 			});
 			contentToBeHidden = contentToBeHidden + '</div>';
-			peep.append(contentToBeHidden);
-			peep.after('<a href="#" class="' + options.viewMoreIdentifier + '">'+options.expandText+'</a>');
-			togglePeeperVisibility(peep.find('.peeper'));	
-			$(peep.next('.' + options.viewMoreIdentifier)).click(function(e){
-				//togglePeeperVisibility($(this).prev('ul').find('.peeper'));
-				togglePeeperVisibility(peep.find('.peeper'));
+			peepList.append(contentToBeHidden);
+			peepList.after('<a href="#" class="' + options.expandIdentifier + '">'+options.expandText+'</a>');
+			togglePeeperVisibility(peepList.find('.'+options.peepListIdentifier));	
+			$(peepList.next('.' + options.expandIdentifier)).click(function(e){
+				togglePeeperVisibility(peepList.find('.'+options.peepListIdentifier));
 				e.preventDefault();
 			});
 
@@ -39,7 +40,7 @@
 		
 		function togglePeeperVisibility(thePeeper){
 			if (options.anim == ''){
-				thePeeper.slideToggle();
+				thePeeper.slideToggle(options.jqueryAnimSpeed);
 			} else {
 				if (thePeeper.hasClass(options.animClose)){
 					thePeeper.removeClass(options.animClose);
