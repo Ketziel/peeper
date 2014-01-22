@@ -1,0 +1,4 @@
+	.peeper-example-animation {max-height: 9999px; transition-property: all; transition-duration: .5s; transition-timing-function: cubic-bezier(0, 1, .5, 1);}
+
+	
+	.peeper-example-animation.closed {overflow-y: hidden; max-height:0px;}
