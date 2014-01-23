@@ -7,17 +7,32 @@
 			peepListIdentifier: 'peeper',
 			expandText: 'MORE',
 			expandIdentifier: 'peeper-clicker',
-			jqueryAnimSpeed:200,
+			maxWidth: 0,
 			anim: '',
-			animClose: 'closed'
+			animClose: 'closed',
+			jqueryAnimSpeed:200,
+			
 		}
 		var options =  $.extend(defaults, options);
 		
 		return this.each(function() {
 			var peepList = $(this);
+			addPeeper(peepList);
+			if (options.maxWidth > 0){
+				$(window).resize(function () { 
+					if($(window).width() < options.maxWidth && peepList.find('.'+options.peepListIdentifier).length == 0){
+						addPeeper(peepList);
+					} else if (peepList.find('.'+options.peepListIdentifier).length > 0){
+						removePeeper(peepList);
+					}
+				});
+			}
+		});
+		
+		
+		function addPeeper (peepList){
 			var listLength =peepList.find(options.peeps).length;
 			var contentToBeHidden = '<div class="' + options.peepListIdentifier + ' ' + ((options.anim != '') ? options.anim: '') + '">';
-			
 			peepList.find(options.peeps).each(function(index, element){
 
 				if(index >= options.peepsToShow){
@@ -34,8 +49,7 @@
 				togglePeeperVisibility(peepList.find('.'+options.peepListIdentifier));
 				e.preventDefault();
 			});
-
-		});
+		}
 		
 		
 		function togglePeeperVisibility(thePeeper){
@@ -49,8 +63,14 @@
 				}
 			}
 		};
+		
+		function removePeeper (obj){
+			obj.next('.' + options.expandIdentifier).remove();
+			var listToKeep = obj.find('.'+options.peepListIdentifier).html();
+			obj.find('.'+options.peepListIdentifier).remove();
+			obj.append(listToKeep);
+		}
 
-		
-		
+					
 	};
 })( jQuery );

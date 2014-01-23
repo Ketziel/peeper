@@ -1,10 +1,12 @@
 #What does this plugin actually do?
 
-Peeper lets you move a some of an exisivley large list of  children within a parent to a collapsible view. Using this plugin let's you handle the hiding/displaying of elements within a parent that is dynamic so you don't need to add anything to your markup - Yay!
+Peeper lets you move a some of an exisivley large list of  children within a parent to a collapsible view. Using this plugin let's you handle the hiding/displaying of elements within a  dynamic parent, so that you don't need to add anything to your markup - Yay!
+
+You can also use peeper responsively by setting a `maxWidth`
 
 #Using this thing
 
-The most simple way to use peeper, would be to just call it on a `<ul>` that conbtains a number of `<li>`.
+The most simple way to use peeper, would be to just call it on a `<ul>` that conbtains a number of `<li>` elements.
 
  ```html
 <ul id="animal-farm">
@@ -47,7 +49,7 @@ $('#very-important-super-duper-offers-list').peeper({peeps: '.super-duper-offer'
  ```
  
  
-Using the option `peeps`, you can specify the selector for each child object that may be put into the collapsible view. Of course, this can be any selector so in the above example you could set `peeps` to `'div'` instead, however you might not want to do this if the children also have children.
+Using the option `peeps`, you can specify the selector for each child object that may be put into the collapsible view. Of course, this can be any selector so in the above example you could set `peeps` to `'div'` instead, however you might not want to do this if the children also contain children.
  
 
 #Options to help you do the do
@@ -60,9 +62,10 @@ Using the option `peeps`, you can specify the selector for each child object tha
 | peepList Identifier |string                  | 'peeper'              | A class name for the collapsible container (used to determine what should be hidden/displayed.                             |
 | expandText            |string                  | 'MORE'               | A string to be used as the text for the button to open the collapsible view.                                                                 |
 | expandIdentifier    |string                   | 'peeper-clicker' | A class name for the button that opens the collapsible view.                                                                                       |
-| jqueryAnimSpeed  |integer                 | 200                    | Used to define the speed of the jquery animation (if css transitions are not being used)                                           |
+| maxWidth               |integer                 | 0                         | This option allows you to use peeper responsively by setting Maximum Width. (if maxWidth is 0, peeper will not be restricted by width)     |
 | anim                       |string                   | ''                         | Used to define the name of a class to use for a css transition (if empty, jquery will be used instead)                       |
 | animClose             |string                   | 'closed'              | Used to define the name of a class which sets the close stylings for a css transition                                                |
+| jqueryAnimSpeed  |integer                 | 200                    | Used to define the speed of the jquery animation (if css transitions are not being used)                                           |
 
 
 #What License I done gone used
