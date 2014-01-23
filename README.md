@@ -65,6 +65,6 @@ Using the option `peeps`, you can specify the selector for each child object tha
 | animClose             |string                   | 'closed'              | Used to define the name of a class which sets the close stylings for a css transition                                                |
 
 
-#License I guess...
+#What License I done gone used
 
 Peeper is under the [MIT](//opensource.org/licenses/MIT) License.
