@@ -4,7 +4,7 @@ Peeper lets you move a some of an exisivley large list of  children within a par
 
 #Using this thing
 
-The most simple way to use peeper, would be to just call it on a <ul> that conbtains <li>'s.
+The most simple way to use peeper, would be to just call it on a `<ul>` that conbtains a number of `<li>`.
 
  ```html
 <ul id="animal-farm">
@@ -21,9 +21,9 @@ The most simple way to use peeper, would be to just call it on a <ul> that conbt
 $('#animal-farm').peeper();
  ```
  
- This will display the first three elements (Elephant, Lion & bear), whilst hiding the others. An <a> tag will be inserted at the bottom with the text 'More' - this opens/closes the collapsible view.
+ This will display the first three elements (Elephant, Lion & bear), whilst hiding the others. An `<a>` tag will be inserted at the bottom with the text 'More' - this opens/closes the collapsible view.
  
- Instead of <ul>'s and <li>'s, you can use divs for your list.
+ Instead of `<ul>` and `<li>`, you can use divs for your list.
  
   ```html
 <div id="very-important-super-duper-offers-list">
