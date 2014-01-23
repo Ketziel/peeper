@@ -1,4 +1,4 @@
-#What does this plugin with the creepy name do?
+#What does this plugin actually do?
 
 Peeper lets you move a some of an exisivley large list of  children within a parent to a collapsible view. Using this plugin let's you handle the hiding/displaying of elements within a parent that is dynamic so you don't need to add anything to your markup - Yay!
 
@@ -50,7 +50,7 @@ $('#very-important-super-duper-offers-list').peeper({peeps: '.super-duper-offer'
 Using the option `peeps`, you can specify the selector for each child object that may be put into the collapsible view. Of course, this can be any selector so in the above example you could set `peeps` to `'div'` instead, however you might not want to do this if the children also have children.
  
 
-#Options to help you do what you done do
+#Options to help you do the do
 
 
 | Name                      | Type                   | Default  Value   | Description                                                                                                                                                                        |
