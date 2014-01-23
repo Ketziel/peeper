@@ -16,7 +16,7 @@
 		return this.each(function() {
 			var peepList = $(this);
 			var listLength =peepList.find(options.peeps).length;
-			var contentToBeHidden = '<div class="' + options.peepListIdentifier + ((options.anim != '') ? options.anim : '') + '">';
+			var contentToBeHidden = '<div class="' + options.peepListIdentifier + ' ' + ((options.anim != '') ? options.anim: '') + '">';
 			
 			peepList.find(options.peeps).each(function(index, element){
 
