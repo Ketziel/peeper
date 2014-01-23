@@ -17,18 +17,25 @@
 		
 		return this.each(function() {
 			var peepList = $(this);
+			$(window).load(function(){responsiveCheck(peepList);});
 			if (options.maxWidth > 0){
 				$(window).resize(function () { 
-					if($(window).width() <= options.maxWidth && peepList.find('.'+options.peepListIdentifier).length == 0){
-						addPeeper(peepList);
-					} else if ($(window).width() > options.maxWidth &&  peepList.find('.'+options.peepListIdentifier).length > 0){
-						removePeeper(peepList);
-					}
+					 responsiveCheck(peepList);
 				});
-			} else {
-				addPeeper(peepList);
-			}
+			} 
 		});
+		
+		function responsiveCheck(peepList){
+			if (options.maxWidth > 0){
+				if($(window).width() <= options.maxWidth && peepList.find('.'+options.peepListIdentifier).length == 0){
+					addPeeper(peepList);
+				} else if ($(window).width() > options.maxWidth &&  peepList.find('.'+options.peepListIdentifier).length > 0){
+					removePeeper(peepList);
+				}
+			} else {
+					addPeeper(peepList);
+			}
+		}
 		
 		
 		function addPeeper (peepList){
