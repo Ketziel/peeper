@@ -2,7 +2,7 @@
 
 Peeper lets you move a some of an exisivley large list of  children within a parent to a collapsible view. Using this plugin let's you handle the hiding/displaying of elements within a  dynamic parent, so that you don't need to add anything to your markup - Yay!
 
-You can also use peeper responsively by setting a `maxWidth`
+You can also use peeper responsively by setting a `maxWidth`.
 
 #Using this thing
 
@@ -59,7 +59,7 @@ Using the option `peeps`, you can specify the selector for each child object tha
 | -------------------|-----------------| ----------------|-----------------------------------------------------------------------------------------------------------------|
 | peeps                      |string                  | 'li'                       | A selector that specifies the child elements to hide/display.                                                                                        |
 | peepsToShow         |integer                | 3                         | Specifies the number of children that will be shown (the rest shall go into the collapsible view.                                |
-| peepList Identifier |string                  | 'peeper'              | A class name for the collapsible container (used to determine what should be hidden/displayed.                             |
+| peepListIdentifier |string                  | 'peeper'              | A class name for the collapsible container (used to determine what should be hidden/displayed.                             |
 | expandText            |string                  | 'MORE'               | A string to be used as the text for the button to open the collapsible view.                                                                 |
 | expandIdentifier    |string                   | 'peeper-clicker' | A class name for the button that opens the collapsible view.                                                                                       |
 | maxWidth               |integer                 | 0                         | This option allows you to use peeper responsively by setting Maximum Width. (if maxWidth is 0, peeper will not be restricted by width)     |
