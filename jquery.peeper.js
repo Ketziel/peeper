@@ -6,6 +6,7 @@
 			peepsToShow: 3,
 			peepListIdentifier: 'peeper',
 			expandText: 'MORE',
+			closeText: 'LESS',
 			expandIdentifier: 'peeper-clicker',
 			maxWidth: 0,
 			anim: '',
@@ -54,6 +55,11 @@
 			peepList.after('<a href="#" class="' + options.expandIdentifier + '">'+options.expandText+'</a>');
 			togglePeeperVisibility(peepList.find('.'+options.peepListIdentifier));	
 			$(peepList.next('.' + options.expandIdentifier)).click(function(e){
+				if($(this).html() == options.expandText){
+					$(this).html(options.closeText);
+				} else {
+					$(this).html(options.expandText);
+				}
 				togglePeeperVisibility(peepList.find('.'+options.peepListIdentifier));
 				e.preventDefault();
 			});

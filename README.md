@@ -61,6 +61,7 @@ Using the option `peeps`, you can specify the selector for each child object tha
 | peepsToShow         |integer                | 3                         | Specifies the number of children that will be shown (the rest shall go into the collapsible view.                                |
 | peepListIdentifier |string                  | 'peeper'              | A class name for the collapsible container (used to determine what should be hidden/displayed.                             |
 | expandText            |string                  | 'MORE'               | A string to be used as the text for the button to open the collapsible view.                                                                 |
+| closeText               |string                  | 'LESS'                | A string to be used as the text for the button to close the collapsible view.                                                                 |
 | expandIdentifier    |string                   | 'peeper-clicker' | A class name for the button that opens the collapsible view.                                                                                       |
 | maxWidth               |integer                 | 0                         | This option allows you to use peeper responsively by setting Maximum Width. (if maxWidth is 0, peeper will not be restricted by width)     |
 | anim                       |string                   | ''                         | Used to define the name of a class to use for a css transition (if empty, jquery will be used instead)                       |
