@@ -1,6 +1,6 @@
 #What does this plugin actually do?
 
-Peeper lets you move a some of an exisivley large list of  children within a parent to a collapsible view. Using this plugin let's you handle the hiding/displaying of elements within a  dynamic parent, so that you don't need to add anything to your markup - Yay!
+Peeper lets you move some items of an excessively large list of  children within a parent to a collapsible view. Using this plugin let's you handle the hiding/displaying of elements within a  dynamic parent, so that you don't need to add anything to your markup - Yay!
 
 You can also use peeper responsively by setting a `maxWidth`.
 

@@ -28,9 +28,9 @@
 		
 		function responsiveCheck(peepList){
 			if (options.maxWidth > 0){
-				if($(window).width() <= options.maxWidth && peepList.find('.'+options.peepListIdentifier).length == 0){
+				if(Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= options.maxWidth && peepList.find('.'+options.peepListIdentifier).length == 0){
 					addPeeper(peepList);
-				} else if ($(window).width() > options.maxWidth &&  peepList.find('.'+options.peepListIdentifier).length > 0){
+				} else if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > options.maxWidth &&  peepList.find('.'+options.peepListIdentifier).length > 0){
 					removePeeper(peepList);
 				}
 			} else {
